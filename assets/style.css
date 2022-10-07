@@ -6,7 +6,7 @@ html {
 nav {
 color: darkblue;
 font-size: 15px;
-font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+font-family:'Times New Roman', Times, serif;
 display: flex;
 flex-direction: column;
 box-sizing: border-box;
