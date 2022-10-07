@@ -1,42 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <!-- This is the first step in making the document responsive but scaling the items to screen -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- This is the style links -->
-    <link rel="stylesheet" type="text/css" href="assets/style.css">
-
-    <!-- This is the title-->
-    <title>Code Quiz</title>
-</head>
-
-<body>
-    <!-- Link to highscores -->
-    <a href="HighScores.html">View Highscores</a>
-    <!-- This is a wrapper -->
-    <div id="wrapper">
-        <!-- Div for timer -->
-        <div id="currentTime"></div>
-        <!-- Div for quiz content -->
-        <div id="questionsDiv">
-            <h1>Coding Quiz Challenge</h1>
-            <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect
-                answers
-                will penalize your score/time by ten seconds!</p>
-            <ul id="choicesUl"></ul>
-            <!-- Buttons -->
-            <button id="startTime">Start Quiz</button>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+       <!--Insert access to stylesheet in CSS-->
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta httyp-equiv="X-UA-Compatible" content="ie=edge">
+        <!--Insert access to JavaScript-->
+        <script src="./scripts/logic.js"></script>
+        <script  src="./scripts/questions.js"></script>
+    <title>Coding Quiz Challenge</title>
+    </head>
+    <body>
+        <header>
+        <nav class="navbar">
+            <a class="navbar-score" href="highscores.html">View Highscores</a>
+            <section class="navbarText" id="navbar">
+                Time: 60 seconds
+            </section>
+        </nav>
+        </header>
+    <main>
+        <section id="start" class="startQuiz">
+            <h1 id="questionsHeader">Coding Quiz Challenge</h1>
+            <p id="instructions">Try to answer the following questions within the time limit!
+                <br>
+            Watch out! An incorrect answer will decrease your score. 
+            </p>
+        <button id="button" onclick="beginQuiz()">Begin Quiz</button>
+        <div>
+            <p id="timer">00</p>
         </div>
-
-    </div>
-
-
-    <script src="questions.js"></script>
-
-
-</body>
+        </section>
+    <!--Quiz Question Page and Appearance-->
+    
+    <section id="quizQuestions" class="hiddenQuiz">
+        <h1 id="questions"></h1>
+        <ul class="choices">
+            <button class = "btn btn-option" id="choice1"></button>
+            <button class = "btn btn-option" id="choice2"></button>
+            <button class = "btn btn-option" id="choice3"></button>
+            <button class = "btn btn-option" id="choice4"></button>
+        </ul> 
+        <button id="button" onclick="questionClick()">Next Question</button>
+    </section>
+    <!--End Page and Appearance-->
+    <section id="endOfGame" class="hiddenQuiz">
+        <h1 id="end">End of Quiz</h1>
+        <p id="score">You received a score of: <span id="score">0</span></p>
+        <form id="submitInitials">
+            <label for="initials">Enter Initials:</label>
+            <input type="text" id="initials">
+            <button type="submit">Submit Score</button>
+        </form>
+    </section>
+    </main>
+    </body>
 
 </html>
