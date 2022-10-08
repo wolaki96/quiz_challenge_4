@@ -25,25 +25,22 @@
                 <br>
             Watch out! An incorrect answer will decrease your score. 
             </p>
-        <button id="button" onclick="beginQuiz()">Begin Quiz</button>
-        <div>
-            <p id="timer">00</p>
-        </div>
+        <button id="startBtn">Begin Quiz</button>
+     
         </section>
     <!--Quiz Question Page and Appearance-->
     
-    <section id="quizQuestions" class="hiddenQuiz">
-        <h1 id="questions"></h1>
+    <section id="quizQuestions" class="hide hiddenQuiz">
+        <h1 id="question-text"></h1>
         <ul class="choices">
-            <button class = "btn btn-option" id="choice1"></button>
-            <button class = "btn btn-option" id="choice2"></button>
-            <button class = "btn btn-option" id="choice3"></button>
-            <button class = "btn btn-option" id="choice4"></button>
+            
         </ul> 
-        <button id="button" onclick="questionClick()">Next Question</button>
+        <div>
+            <p id="timer">60</p>
+        </div>
     </section>
     <!--End Page and Appearance-->
-    <section id="endOfGame" class="hiddenQuiz">
+    <section id="endOfGame" class="hide hiddenQuiz">
         <h1 id="end">End of Quiz</h1>
         <p id="score">You received a score of: <span id="score">0</span></p>
         <form id="submitInitials">
@@ -53,8 +50,9 @@
         </form>
     </section>
     </main>
-    <script src="./scripts/logic.js"></script>
     <script  src="./scripts/questions.js"></script>
+    <script src="./scripts/logic.js"></script>
+    
     </body>
 
 </html>
